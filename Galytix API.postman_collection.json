@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "e1130d67-52a4-4a81-8631-743bbbb9d4c2",
+		"name": "Galytix API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24569385"
+	},
+	"item": [
+		{
+			"name": "GrossWrittenPremium",
+			"item": [
+				{
+					"name": "Average - empty request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 415\", function () {",
+									"  const jsonData = pm.response.json();",
+									"  pm.response.to.have.status(415);",
+									"",
+									"  pm.expect(jsonData.title).to.eql(\"Unsupported Media Type\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/server/api/gwp/avg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"server",
+								"api",
+								"gwp",
+								"avg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Average - 1 counrty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Contain motor result\", function() {",
+									"",
+									"  pm.expect(jsonData.motor).to.eql(32472888423);",
+									"})",
+									"",
+									"pm.test(\"Contain transport result\", function() {",
+									"",
+									"  pm.expect(jsonData.transport).to.eql(1091550105.0);",
+									"})",
+									"",
+									"pm.test(\"Contain a_s result\", function() {",
+									"",
+									"  pm.expect(jsonData.a_s).to.eql(26942272895);",
+									"})",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"country\": \"be\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/server/api/gwp/avg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"server",
+								"api",
+								"gwp",
+								"avg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Average - 1 lob",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Contain motor result\", function() {",
+									"  const jsonData = pm.response.json();",
+									"  pm.expect(jsonData.motor).to.eql(32472888423);",
+									"})",
+									"",
+									"",
+									"pm.test(\"Not contain a_s result\", function() {",
+									"  const jsonData = pm.response.json();",
+									"  pm.expect(jsonData.a_s).to.eql(undefined);",
+									"})",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"country\": \"be\",\n    \"lob\": [\"motor\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/server/api/gwp/avg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"server",
+								"api",
+								"gwp",
+								"avg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Average - missing country",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Contain motor result\", function() {",
+									"  const jsonData = pm.response.json();",
+									"  pm.expect(jsonData.motor).to.eql(32472888423);",
+									"})",
+									"",
+									"",
+									"pm.test(\"Not contain a_s result\", function() {",
+									"  const jsonData = pm.response.json();",
+									"  pm.expect(jsonData.a_s).to.eql(undefined);",
+									"})",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"country\": \"be\",\n    \"lob\": [\"motor\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/server/api/gwp/avg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"server",
+								"api",
+								"gwp",
+								"avg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

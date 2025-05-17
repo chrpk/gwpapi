@@ -57,9 +57,21 @@
               "target": "Package",
               "version": "[0.1.8, )"
             },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "System.IO.Abstractions": {
+              "target": "Package",
+              "version": "[22.0.14, )"
             }
           },
           "imports": [

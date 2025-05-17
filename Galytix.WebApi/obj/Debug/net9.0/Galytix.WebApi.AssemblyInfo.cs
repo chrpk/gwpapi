@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Galytix.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+720f8c5ad2d7f2d2b65d6f2d3626dca5986b926a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Galytix.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Galytix.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,0 @@
-@Galytix.WebApi_HostAddress = http://localhost:5224
-
-GET {{Galytix.WebApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
